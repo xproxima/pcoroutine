@@ -1,0 +1,23 @@
+os: linux
+language: python
+env: TOXENV=py,codecov
+
+before_install: true
+
+install:
+  - pip install tox
+
+script:
+  - tox
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/.cache/pre-commit
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
